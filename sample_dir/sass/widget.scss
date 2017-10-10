@@ -1,0 +1,247 @@
+@charset "UTF-8";
+@import "compass";
+@import "compass/css3";
+$color_blue:#1976d2;
+$color_red:#d32f2f;
+$color_red_light:#ff5f52;
+$color_purple:#7b1fa2;
+$color_green:#388e3c;
+$color_blue_grey:#616161;
+@include keyframes(input_focus){
+    0% {
+        @include box-shadow(0rem 0rem 0.1rem 0rem rgba(0,0,0,0.9));
+    }
+    100% {
+        @include box-shadow(0rem 0rem 0.15rem 0rem rgba($color_blue,0.9));
+    }
+}
+a{
+    text-decoration: none;
+  }
+ul,li{
+    list-style: none;
+}
+.card-depth-01{
+    @include box-shadow(0 1px 2px 0 rgba(0,0,0,0.12),0 1px 1px 0 rgba(0,0,0,.24));
+}
+.card-depth-02{
+    @include box-shadow(0 3px 3px 0 rgba(0,0,0,0.16),0 3px 3px 0 rgba(0,0,0,0.23));
+}
+.card-depth-03{
+    @include box-shadow(0 10px 10px 0 rgba(0,0,0,0.19),0 6px 3px 0 rgba(0,0,0,0.23));
+}
+.card-depth-04{
+    @include box-shadow(0 14px 14px 0 rgba(0,0,0,0.25),0 10px 5px rgba(0,0,0,0.22));
+}
+.card-depth-05{
+    @include box-shadow(0 19px 19px 0 rgba(0,0,0,0.30),0 15px 6px 0 rgba(0,0,0,0.22));
+}
+input, button, textarea, select {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+.sample{
+    animation:animationSample 2s ease-in 0s 1 normal forwards running;
+}
+html{
+    background-color: rgb(244,244,244);
+    
+}
+.input-cmn-txt{
+    color:rgba(0,0,0,0.75);
+    font-size: 0.8rem;
+    height:1.2rem;
+    transition :box-shadow 0.3s ease-in-out 0s; 
+    background-color: rgba(255,255,255,1);
+    @include box-shadow(0rem 0rem 0.05rem 0rem rgba(0,0,0,0.9));
+    @include border-radius(0.12rem);
+    &:focus{
+        @include box-shadow(0rem 0rem 0.05rem 0.05rem rgba($color_green,0.9)); 
+    }
+}
+.input-cmn-btn{
+    color:rgba(255,255,255,0.95);
+    background-color: $color_purple;
+    @include border-radius(0.2rem);
+    font-size:1rem;
+    width:5rem;
+    height:2rem;
+    transition:background-color 0.2s ease-in-out 0s;
+    transition:box-shadow 0.2s ease-in-out 0s;
+    @extend .card-depth-01;
+    cursor: pointer;
+    &:hover{
+        @extend .card-depth-02;
+        background-color: $color_purple + rgb(40,40,40);
+    }
+}
+.lbl-cmn-required{
+    &:after{
+        content:"必須";
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height:1.5rem;
+        width:2.5rem;
+        @include border-radius(0.12rem);
+        color:rgba(255,255,255,0.95);
+        background-color: $color_red;
+    }
+}
+.lbl-cmn-option{
+    &:after{
+        content:"任意";
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height:1.5rem;
+        width:2.5rem;
+        @include border-radius(0.12rem);
+        color:rgba(255,255,255,0.95);
+        background-color: $color_blue;
+    }
+}
+.btn-cmn-strong{
+    @extend .card-depth-01;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:rgba(255,255,255,0.95);
+    background-color: $color_red;
+    @include border-radius(0.2rem);
+    font-size:1rem;
+    width:5rem;
+    height:2rem;
+    transition:background-color 0.2s ease-in-out 0s;
+    transition:box-shadow 0.2s ease-in-out 0s;
+    cursor: pointer;
+    &:hover{
+        @extend .card-depth-02;
+        background-color: $color_red + rgb(40,40,40);
+    }
+}
+.btn-cmn-safety{
+    @extend .card-depth-01;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:rgba(255,255,255,0.95);
+    background-color: $color_green;
+    @include border-radius(0.2rem);
+    font-size:1rem;
+    width:5rem;
+    height:2rem;
+    transition:background-color 0.2s ease-in-out 0s;
+    transition:box-shadow 0.2s ease-in-out 0s;
+    cursor: pointer;
+    &:hover{
+        @extend .card-depth-02;
+        background-color: $color_green + rgb(40,40,40);
+    }
+}
+.btn-cmn-consent{
+    @extend .card-depth-01;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:rgba(255,255,255,0.95);
+    background-color: $color_blue;
+    @include border-radius(0.2rem);
+    font-size:1rem;
+    width:5rem;
+    height:2rem;
+    transition:background-color 0.2s ease-in-out 0s;
+    transition:box-shadow 0.2s ease-in-out 0s;
+    cursor: pointer;
+    &:hover{
+        @extend .card-depth-02;
+        background-color: $color_blue + rgb(40,40,40);
+    }
+}
+.btn-cmn-negative{
+    @extend .card-depth-01;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color:rgba(255,255,255,0.95);
+    background-color: $color_blue_grey;
+    @include border-radius(0.2rem);
+    font-size:1rem;
+    width:5rem;
+    height:2rem;
+    transition:background-color 0.2s ease-out 0s;
+    transition:box-shadow 0.2s ease-out 0s;
+    cursor: pointer;
+    &:hover{
+        @extend .card-depth-02;
+        background-color: $color_blue_grey + rgb(40,40,40);
+    }
+}
+.box-cmn-z1{
+    background: rgba(255,255,255,1);
+    width:10rem;
+    height:10rem;
+    @include border-radius(0.2rem);
+    @extend .card-depth-01;
+}
+.box-cmn-z2{
+    background: rgba(255,255,255,1);
+    width:10rem;
+    height:10rem;
+    @include border-radius(0.2rem);
+    @extend .card-depth-02;
+}
+.box-cmn-z3{
+    background: rgba(255,255,255,1);
+    width:10rem;
+    height:10rem;
+    @include border-radius(0.2rem);
+    @extend .card-depth-03;
+}
+
+.box-cmn-z4{
+    background: rgba(255,255,255,1);
+    width:10rem;
+    height:10rem;
+    @include border-radius(0.2rem);
+    @extend .card-depth-04;
+}
+.lnk-cmn-01{
+    display: inline-block;
+    color:$color_blue;
+    &:hover{
+        color:$color_blue + rgb(90,90,90);
+        @include text-shadow(0 0 5px $color_blue+rgb(130,130,130));
+    }
+}
+.lnk-cmn-02{
+    color:rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255,255,255,1);
+    width:10rem;
+    height:10rem;
+    top: 0rem;
+    position: relative;
+    @extend .card-depth-02;
+    @include border-radius(3px);
+    transition: top 0.3s ease-out 0s; 
+    &:hover{
+        top:-0.3rem;
+        background-color: $color_red_light
+    }
+    &:active{
+        @extend .card-depth-01;
+    }
+}
+
